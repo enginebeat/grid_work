@@ -35,40 +35,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     };
 });
 
-/*-------------------------------------------------------------------------------*/
-/*
-function makeResizableDiv(div) {
 
-    const resizable = document.querySelector(div);
-
-
-    const resizers = document.querySelectorAll('.resizer');
-    console.log(resizers);
-    for (let i = 0;i < resizers.length; i++) {
-        const currentResizer = resizers[i];
-        currentResizer.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            window.addEventListener('mousemove', resize);
-            window.addEventListener('mouseup', stopResize);
-        });
-    }
-    function resize(e) {
-        let currentResizer = e.target;
-        console.log(currentResizer);
-        if (currentResizer.classList.contains('bottom-right')) {
-            resizable.style.width = e.pageX - resizable.getBoundingClientRect().left + 'px'
-        }
-    }
-
-    function stopResize() {
-        window.removeEventListener('mousemove', resize)
-    }
-
-}
-
-makeResizableDiv('.resizable');
-
-*/
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* risize a div */
@@ -156,15 +123,42 @@ function constructMimic(){
 
 }
 
-function createPalette(){
-    /* will create the symbol palette that can be used. */
-    //create container on the left of the page
+function createPalette(div){
+  /* will create the symbol palette that can be used. */
+  //create container on the left of the page
+  let pallete = document.querySelector('.palette');
+  let paletteItems = [];
+  paletteItems.push('./assets/svg/strait_line_L_R.svg');
+  paletteItems.push('./assets/svg/strait_line_T_B.svg');
+  paletteItems.push('./assets/svg/corner_T_R.svg');
+  paletteItems.push('./assets/svg/corner_T_L.svg');
+  paletteItems.push('./assets/svg/corner_B_R.svg');
+  paletteItems.push('./assets/svg/corner_B_L.svg');
+
+  for(let i = 0; i < palette.length; i++) {
+    var node = document.createElement('div');
+    node.classList.add('pic_cell');
+    node.classList.add('pic_cell' + i);
+
+    var img = document.createElement('img');
+    img.src = "/assets/svg/strait_line_L_R.svg";
+    node.appendChild(img);
+
+    container1.appendChild(node);
+  };
+    
+
+    
+
+    console.log(paletteItems);
+
 }
 
 
   
   makeResizableDiv('.resizable'); // run resizable function.
-  addMimic();
+  createPalette();
+  constructMimic();
 
 
 
