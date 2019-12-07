@@ -137,14 +137,14 @@ function createPalette(div){
 
   for(let i = 0; i < palette.length; i++) {
     var node = document.createElement('div');
-    node.classList.add('pic_cell');
-    node.classList.add('pic_cell' + i);
+    node.classList.add('palette_pic_cell');
+    node.classList.add('palette_pic_cell' + i);
 
     var img = document.createElement('img');
-    img.src = "/assets/svg/strait_line_L_R.svg";
+    img.src = paletteItems[i];
     node.appendChild(img);
 
-    container1.appendChild(node);
+    palette.appendChild(node);
   };
     
 
