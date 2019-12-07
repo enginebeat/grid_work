@@ -158,6 +158,7 @@ function constructMimic(){
 
 function createPalette(){
     /* will create the symbol palette that can be used. */
+    //create container on the left of the page
 }
 
 
